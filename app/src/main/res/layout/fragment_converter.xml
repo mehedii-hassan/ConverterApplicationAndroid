@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConverterFragment">
+
+    <include layout="@layout/toolbar_design" />
+
+    <TextView
+        android:id="@+id/tvNameTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="60dp"
+        android:text="Select which thing you want to convert :"
+        android:textColor="#03A9F4"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="11dp"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameTop">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:paddingBottom="6dp">
+
+
+            //First TextInputLayout design start==========================
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+            </com.google.android.material.textfield.TextInputLayout>
+            //First TextInputLayout design end=============================
+
+
+            //Second TextInputLayout design start==========================
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_txtInputLayoutRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".45" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayout2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Select"
+                app:layout_constraintEnd_toEndOf="@+id/gl_txtInputLayoutRight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtInputLayout">
+
+                <AutoCompleteTextView
+                    android:id="@+id/tvName1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+            </com.google.android.material.textfield.TextInputLayout>
+            //Second TextInputLayout design end==========================
+
+
+            //Left right image design start==============================
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_arrowImageEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".55" />
+
+
+            <ImageView
+                android:id="@+id/imgArrow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="10dp"
+                android:src="@drawable/left_right_arrow"
+                app:layout_constraintBottom_toBottomOf="@+id/txtInputLayout2"
+                app:layout_constraintEnd_toEndOf="@+id/gl_arrowImageEnd"
+                app:layout_constraintStart_toStartOf="@+id/gl_txtInputLayoutRight"
+                app:layout_constraintTop_toTopOf="@+id/txtInputLayout2" />
+
+            //Left right image design end================================
+
+
+            //Third TextInputLayout design start==========================
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayout3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Select"
+                app:layout_constraintBottom_toBottomOf="@+id/txtInputLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/gl_arrowImageEnd"
+                app:layout_constraintTop_toBottomOf="@+id/txtInputLayout">
+
+                <AutoCompleteTextView
+                    android:id="@+id/tvName2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+            </com.google.android.material.textfield.TextInputLayout>
+            //Third TextInputLayout design end==========================
+
+
+            //Input-Output field design start===================================
+
+            <EditText
+                android:id="@+id/editTxtInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/custom_input_field"
+                android:hint="Input"
+                android:inputType="number"
+                android:maxLength="12"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@+id/gl_txtInputLayoutRight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtInputLayout2" />
+
+
+            //Button submit start======================
+            //Material button desing---------------------
+            <!--  <com.google.android.material.button.MaterialButton
+                  android:id="@+id/btnSubmit"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:backgroundTint="#03A9F4"
+                  android:padding="10dp"
+                  android:text="Submit"
+                  android:textSize="12sp"
+                  android:textStyle="italic"
+                  app:cornerRadius="4dp"
+                  app:layout_constraintBottom_toBottomOf="@+id/editTxtInput"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="@+id/gl_arrowImageEnd"
+                  app:layout_constraintTop_toBottomOf="@+id/txtInputLayout3"
+                  app:layout_constraintTop_toTopOf="@+id/editTxtInput" />-->
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/custom_button_design"
+                android:padding="10dp"
+                android:text="Submit"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/editTxtInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/gl_arrowImageEnd"
+                app:layout_constraintTop_toBottomOf="@+id/txtInputLayout3"
+                app:layout_constraintTop_toTopOf="@+id/editTxtInput" />
+            //Button submit end======================
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewId2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="11dp"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewId">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="6dp"
+            android:paddingTop="6dp"
+            android:paddingRight="6dp"
+            android:paddingBottom="6dp">
+
+
+            //Textview output start-----------------
+
+            <TextView
+                android:id="@+id/tvOutput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_input_field"
+                android:padding="15dp"
+                android:text="Output"
+                android:textAlignment="textStart"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            //Textview output end-----------------
+
+            //Button Reset start======================
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_button_design"
+                android:padding="10dp"
+                android:text="Reset"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:cornerRadius="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvOutput"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="@+id/tvOutput"
+                app:layout_constraintTop_toBottomOf="@+id/tvOutput" />
+            //Button Reset end======================
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
