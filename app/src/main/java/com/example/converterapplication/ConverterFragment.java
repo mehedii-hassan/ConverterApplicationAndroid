@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,7 +56,6 @@ public class ConverterFragment extends Fragment {
     private String[] dataList;
 
 
-
     ArrayAdapter<String> adapterForConverterOption;
     ArrayAdapter<String> adapterForCurrencyList;
     ArrayAdapter<String> adapterForTemperatureList;
@@ -70,7 +70,7 @@ public class ConverterFragment extends Fragment {
         // Inflate the layout for getContext( fragment
 
         View view = inflater.inflate(R.layout.fragment_converter, container, false);
-        ButterKnife.bind(this,view );
+        ButterKnife.bind(this, view);
         ui();
 
         return view;
@@ -150,11 +150,14 @@ public class ConverterFragment extends Fragment {
         });
 
 
-
-
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //method call short time button background color change ------------------------------------
+                shortTimeButtonBackgroundColorChange(btnSubmit);
+
+
                 String tvNameString = txtViewName.getText().toString().trim();
                 String tvNameString1 = txtViewName1.getText().toString().trim();
                 String tvNameString2 = txtViewName2.getText().toString().trim();
@@ -197,10 +200,37 @@ public class ConverterFragment extends Fragment {
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                shortTimeButtonBackgroundColorChange(btnReset);
                 editTxtInput.setText("");
                 tvOutput.setText("");
             }
         });
+
+
+    }
+
+    private void shortTimeButtonBackgroundColorChange(Button button) {
+        Handler handler = new Handler();
+
+        if (button.equals(btnSubmit)) {
+            button.setBackgroundResource(R.drawable.custom_button_design2);
+            // SLEEP 2 SECONDS HERE ...
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    btnSubmit.setBackgroundResource(R.drawable.custom_button_design);
+                }
+            }, 200);
+        } else {
+            btnReset.setBackgroundResource(R.drawable.custom_button_design2);
+            // SLEEP 2 SECONDS HERE ...
+            // Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    btnReset.setBackgroundResource(R.drawable.custom_button_design);
+                }
+            }, 200);
+
+        }
 
 
     }
@@ -1106,7 +1136,6 @@ public class ConverterFragment extends Fragment {
     private double convertTeraByteToGigaByte(double d) {
         return (d * 1000);
     }
-
 
 
     @Override

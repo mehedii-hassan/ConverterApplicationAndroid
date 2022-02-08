@@ -1,5 +1,6 @@
 package com.example.converterapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -7,6 +8,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 
 import butterknife.ButterKnife;
 
@@ -14,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private androidx.appcompat.app.AlertDialog.Builder alertDialogBuilder;
     private androidx.appcompat.app.AlertDialog alertDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +39,36 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        setAlertDialog();
+        showAlertDialog();
     }
 
-    void setAlertDialog() {
+    private void showAlertDialog() {
+        LayoutInflater layoutInflater = getLayoutInflater();
+        View view = layoutInflater.inflate(R.layout.custom_alert_dialog, null);
+
+        alertDialog = new androidx.appcompat.app.AlertDialog.Builder(this).setView(view).create();
+        alertDialog.show();
+
+        Button buttonYes = view.findViewById(R.id.btnYes);
+        Button buttonNo = view.findViewById(R.id.btnNo);
+
+        buttonYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        buttonNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.cancel();
+            }
+        });
+
+    }
+
+//default alert dialog=============================================================================
+   /* void showAlertDialog() {
         alertDialogBuilder = new androidx.appcompat.app.AlertDialog.Builder(this);
 
         //for setting title----------
@@ -78,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         //create alert dialog------------
         alertDialog = alertDialogBuilder.create();
         alertDialog.show();
-    }
-    //Data conversion end================================================================
+    }*/
 
 }

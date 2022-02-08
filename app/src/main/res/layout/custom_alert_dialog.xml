@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_warning"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:text="Warning"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/ivWarning"
+        app:layout_constraintStart_toEndOf="@+id/ivWarning"
+        app:layout_constraintTop_toTopOf="@+id/ivWarning"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/viewDividerLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@+id/ivWarning" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Do you want to exit ?"
+        android:textSize="15sp"
+        android:layout_marginTop="6dp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividerLine"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnYes"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_button_design"
+        android:padding="5dp"
+        android:text="Yes"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNo"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_button_design"
+        android:padding="5dp"
+        android:text="No"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toStartOf="@+id/btnYes"
+        app:layout_constraintHorizontal_bias=".8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
