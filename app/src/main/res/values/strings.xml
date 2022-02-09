@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ConverterApplication</string>
+    <string name="app_name">Converter Application</string>
     <string-array name="ConverterOption">
         <item>Currency</item>
         <item>Temperature</item>
