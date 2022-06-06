@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ConverterApplication/app/src/main/res/drawable/custom_button_design.xml" value="0.240625" />
         <entry key="..\:/ConverterApplication/app/src/main/res/drawable/custom_button_design2.xml" value="0.240625" />
         <entry key="..\:/ConverterApplication/app/src/main/res/drawable/ic_warning.xml" value="0.240625" />
+        <entry key="..\:/ConverterApplication/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/ConverterApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.221025641025641" />
         <entry key="..\:/ConverterApplication/app/src/main/res/layout/custom_alert_dialog.xml" value="0.17" />
         <entry key="..\:/ConverterApplication/app/src/main/res/layout/fragment_converter.xml" value="0.10989583333333333" />
+        <entry key="..\:/ConverterApplication/app/src/main/res/layout/toolbar_design.xml" value="0.22447916666666667" />
       </map>
     </option>
   </component>
